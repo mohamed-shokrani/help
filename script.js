@@ -1,1 +1,1 @@
-alert("go")
+console.log("hellow");
