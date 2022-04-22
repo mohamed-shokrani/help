@@ -145,7 +145,7 @@ nav ul a:hover {
     }
     
 }
-@media (max-width: 768px) {
+@media (max-width: 864px) {
     body {  
 
         overflow-x: hidden!important;
@@ -157,7 +157,7 @@ nav ul a:hover {
         text-align: center;
         display: flex;
         top: 10%;
-        left: 70%!important;
+        left: 60%!important;
         float: left;
         transform: translate(-10%,-10%);
         
@@ -253,7 +253,7 @@ nav ul a:hover {
  line-height: -50px;
  width: 0px;
 }
-@media (max-width: 376px) {
+@media (max-width: 364px) {
     body {  
 
         overflow-x: hidden!important;
