@@ -2,6 +2,14 @@
 <html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <link rel="stylesheet" href="css/prodects.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
      
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +25,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     />
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +37,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body id="body">
+
+    <!-- Start of header  -->
     <header>
       <a class="logo" href="">Shopping</a>
       <div class="search-box">
@@ -70,6 +80,111 @@
       </nav>
       <div class="clearfix"></div>
     </header>
+
+        <!-- End of header  -->
+
+     <!-- Slider perview for our products -->
+
+     <div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+         
+          
+          <img src="Crousle/hp1.jpg" alt="">
+          <p >Dell 1</p>
+        </div>
+        <div class="swiper-slide">
+         
+          
+          <img src="Crousle/apple-iphone-x.jpg" alt="">
+          <p >Dell 1</p>
+        </div>
+        <div class="swiper-slide">
+         
+          
+          <img src="Crousle/iphone.jpg" alt="">
+          <p >Dell 1</p>
+        </div>
+        <div class="swiper-slide">
+         
+          
+          <img src="Crousle/mac-pro.jpg" alt="">
+          <p >mac-pro</p>
+        </div><div class="swiper-slide">
+         
+          
+          <img src="Crousle/huawi p30.jpg" alt="">
+          <p >huawi p30</p>
+        </div><div class="swiper-slide">
+         
+          
+          <img src="Crousle/key holder.jpg" alt="">
+          <p >key holder</p>
+        </div><div class="swiper-slide">
+         
+          
+          <img src="Crousle/dell2.jpg" alt="">
+          <p >Dell 1</p>
+        </div><div class="swiper-slide">
+         
+          
+          <img src="Crousle/hp1.jpg" alt="">
+          <p >Dell 1</p>
+        </div>
+        <!-- <div class="swiper-slide"><img src="3.png" alt=""></div>
+        <div class="swiper-slide"><img src="1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/6jpg.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/dell1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/dell2.jpg" alt=""></div>
+       
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div>
+        <div class="swiper-slide"><img src="Crousle/3 (1).jpg" alt=""></div> -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  
+   <!-- begining of footer -->
+
+
+   <div id="myNav" class="overlay">
+    <div style="width:50%;height:80%; display: inline; float: left; padding-right: 20px;">
+        <img id="img_overlay" width="100%" height="100%">
+    </div>
+    <div>
+        <h2 id="title_overlay"></h2>
+        <h3 id="brand_overlay"></h3>
+        <h3 id="discount_overlay"></h3>
+        <h3 id="price_overlay"></h3>
+        <p id="discription_overlay"></p>
+    </div>
+</div>
+<i onclick="location.assign('cart.html')" id="cart-logo" class="fas fa-shopping-cart fa-spin" aria-hidden="true" style="font-size:30x;color:rgb(161, 231, 114)"></i>
+<h2>Products</h2>
+<div class="selectdiv">
+
+    <label>
+        <select id="select" onchange="select_category()">
+            <option value="All Categories"  selected> All Categories </option>
+        
+        </select>
+    </label>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div id="all">
+
+</div>
+
 
 
     <footer class="footer">
@@ -136,6 +251,37 @@
         });
       });
     </script>
-    <script src="script.js"></script>
+    
+    
+    <!-- To invoke swipper files -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/script/script.js"></script>
+    <script>
+     const swiper = new Swiper('.swiper', {
+    // Default parameters
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 6,
+        spaceBetween: 40
+      }
+    }
+  })
+    </script>
+  <script src="/script/responsiveslider.js"></script>
+  <script src="script/product.js"></script>
   </body>
 </html>
