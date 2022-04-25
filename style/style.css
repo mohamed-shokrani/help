@@ -396,6 +396,9 @@ footer a li {
     width: 25%;
     margin-bottom: 20px;
   }
+  #id{
+  font-size: 10px;
+  }
 }
 @media (max-width: 547px) {
   .footer-col {

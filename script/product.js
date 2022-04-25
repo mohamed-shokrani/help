@@ -147,16 +147,20 @@ document.getElementById("body").onclick = function() {
 }
 var count;
 //function for add to cart
-
+let countEl = document.getElementById("lblCartCount")
+let counter = 0
 function addcart(id, discountPercentage, brand, title, description, price, image) {
 
+    counter += 1
+    countEl.innerHTML = counter
     if (localStorage.getItem(id)) {
+       
         cart = JSON.parse(localStorage.getItem(id));
         console.log(cart)
         if (cart) {
             cart.count++;
             localStorage.setItem(id, JSON.stringify(cart));
-
+            
 
         } else {
 
