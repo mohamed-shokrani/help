@@ -21,7 +21,7 @@ if (i > 0) {
 
 }
 
-document.getElementById('cart').innerHTML += '<div class="back-to-shop"><a href=index.html">&leftarrow;</a><span class="text-muted">Back to shop</span></div>'
+document.getElementById('cart').innerHTML += '<div class="back-to-shop"><a href="index.html"">&leftarrow;</a><span class="text-muted">Back to shop</span></div>'
     //function when minus count one of items
 function minus(th, id) {
     var cart = JSON.parse(localStorage.getItem(id))
