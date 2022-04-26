@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="css/cart.css"> -->
+    <title>check out</title>
+</head>
+
+<body>
+    <!-- <div>
+        <i class="fa fa-cc-visa" style="color:navy;"></i>
+        <i class="fa fa-cc-mastercard" style="color:navy;"></i>
+        <i class="fa fa-cc-amex" style="color:navy;"></i>
+        <i class="fa fa-cc-discover" style="color:navy;"></i>
+    </div> -->
+    <div class="container" style="  margin-top: 5%; width: 50%; background-color: rgba(206, 212, 201, 0.733);
+    padding: 10px;">
+        <div class=" m-auto" style="  margin: auto;
+        width: 100%; 
+   text-align: center;">
+            <h3 style="color: rgb(80, 78, 78);">Pay Invoice</h3>
+            <i id="visa" class="fa fa-cc-visa" style="cursor:pointer;color:rgb(132, 147, 212); display: inline-block; font-size: 40px;"></i>
+            <i id="mastercard" class="fa fa-cc-mastercard" style="cursor:pointer;color:rgb(134, 128, 70); display: inline-block; font-size: 40px;"></i>
+            <i id="amex" class="fa fa-cc-amex" style="cursor:pointer;color:navy; display: inline-block; font-size: 40px;"></i>
+            <i id="discover" class="fa fa-cc-discover" style="cursor:pointer;color:rgb(216, 178, 73); display: inline-block; font-size: 40px;"></i>
+        </div>
+        <div style="  margin: auto;
+        width: 100%; 
+   ">
+            <form>
+                <div class="form-group ">
+                    <label for="NameOnCard" style="font-weight: 700; color: rgb(80, 78, 78);">Payment amount</label>
+                    <input type="text" onfocus="this.style.outline= 'none';" readonly class="form-control-plaintext" id="Price" style="font-size: 25px; font-weight: 500;">
+
+                </div>
+                <div class="form-group">
+                    <label for="NameOnCard" style="font-weight: 700; color: rgb(80, 78, 78);">Name On Card</label>
+                    <input type="text" class="form-control" id="NameOnCard" placeholder="Name On Card">
+                    <p id="p_name"></p>
+                </div>
+                <div class="form-group">
+                    <label for="CardNumber" style="font-weight: 700; color: rgb(80, 78, 78);">Card Number</label>
+                    <input type="text" class="form-control" id="CardNumber" placeholder="Card Number">
+                    <p id="p_number"></p>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="SecurityCode" style="font-weight: 700; color: rgb(80, 78, 78);">Security Code</label>
+                        <input type="text" class="form-control" id="SecurityCode" placeholder="Security Code">
+                        <p id="p_security"></p>
+                    </div>
+                    <div class="form-group col">
+                        <label for="ZipCode" style="font-weight: 700; color: rgb(80, 78, 78);">Zip Code</label>
+                        <input type="text" class="form-control" id="ZipCode" placeholder="Zip Code">
+                        <p id="p_zip"></p>
+                    </div>
+                </div>
+                <button id='pay' type="button" class="btn  btn-lg btn-block" style=" background-color:rgb(104, 114, 204);"> </button>
+            </form>
+        </div>
+    </div>
+    <script src="script/bootstrap.bundle.js"></script>
+    <script src="script/bootstrap.bundle.min.js"></script>
+    <script src="script/jquery.min.js"></script>
+    <script src="script/checkout.js"></script>
+</body>
+
+</html>
