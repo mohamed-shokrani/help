@@ -42,7 +42,9 @@ document.getElementById('NameOnCard').onblur = function() {
 
 }
 document.getElementById('visa').onclick = function() {
-
+    document.getElementById('CardNumber').removeAttribute('readonly');
+    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('p_number').innerHTML = ''
     document.getElementById('mastercard').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
     document.getElementById('discover').style.fontSize = '40px'
@@ -54,6 +56,9 @@ document.getElementById('visa').onclick = function() {
 
 };
 document.getElementById('mastercard').onclick = function() {
+    document.getElementById('CardNumber').removeAttribute('readonly');
+    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
     document.getElementById('discover').style.fontSize = '40px'
@@ -65,6 +70,9 @@ document.getElementById('mastercard').onclick = function() {
     console.log(x)
 };
 document.getElementById('amex').onclick = function() {
+    document.getElementById('CardNumber').removeAttribute('readonly');
+    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '50px'
     document.getElementById('discover').style.fontSize = '40px'
@@ -76,6 +84,9 @@ document.getElementById('amex').onclick = function() {
     console.log(x)
 };
 document.getElementById('discover').onclick = function() {
+    document.getElementById('CardNumber').removeAttribute('readonly');
+    document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+    document.getElementById('p_number').innerHTML = ''
     document.getElementById('visa').style.fontSize = '40px'
     document.getElementById('amex').style.fontSize = '40px'
     document.getElementById('discover').style.fontSize = '50px'
@@ -86,15 +97,21 @@ document.getElementById('discover').onclick = function() {
     x['discover'] = regex_Discover_code;
     console.log(x)
 };
-document.getElementById('CardNumber').onfocus = function() {
+document.getElementById('CardNumber').onfocus = function(event) {
 
     if (x['card'] == false) {
-        alert('please select credit card type ')
-        location.reload();
+        document.getElementById('CardNumber').setAttribute('readonly', true);
+        document.getElementById('CardNumber').style.border = '2px solid red'
+        document.getElementById('p_number').innerHTML = ' Please Chose card type not vaild'
+
+    } else {
+        document.getElementById('CardNumber').removeAttribute('readonly');
+        document.getElementById('CardNumber').style.border = '2px solid rgb(43, 209, 140)'
+        document.getElementById('p_number').innerHTML = ''
     }
 }
-document.getElementById('CardNumber').onblur = function() {
-    if (x['card'] != true) {
+document.getElementById('CardNumber').onblur = function(event) {
+    if (x['card'] == true) {
         var reg = Object.values(x)
         var key = Object.keys(x)[0]
         t2 = reg[0].test(document.getElementById('CardNumber').value);
