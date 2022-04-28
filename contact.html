@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact For</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/contact-me.css">
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="contact-us.js" ></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="">Shopping</a>
+        <div class="search-box">
+          <input
+            class="search-txt"
+            type="text"
+            name=""
+            placeholder="Type to search"
+          />
+          <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+        <!-- <div class="box">
+          <input type="checkbox" id="check">
+          <div class="search-box">
+            <input type="text" placeholder="Type here...">
+            <label for="check" class="icon">
+              <i class="fas fa-search"></i>
+            </label>
+          </div>
+        </div> -->
+        <div class="menu-toggle"></div>
+        <nav>
+         
+          <ul>
+            <li><a href="cart.html"  >
+              <i class="fa" style="font-size: 30px">&#xf07a;</i>
+              <span class="badge badge-warning"  id="lblCartCount"></span>
+            </a></li>
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="About_us.html">About us</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="registeration.html">Register</a></li>
+          </ul>
+        </nav>
+        <div class="clearfix"></div>
+      </header>
+
+      <!-- <div class="alert-success">
+        <span>Message Sent ! Thank You For Contacting Us</span>
+    </div>
+      -->
+     <!-- <div class="alert-error">
+        <span>SomeThing Went Wrong ! Please Try Again</span>
+    </div>   -->
+    
+    <div class="contact-section">
+        <div class="contact-info">
+            <div><i class="fa-solid fa-location-dot"></i>Address City Country</div>
+            <div><i class="fa-solid fa-envelope"></i>Contact@email.com</div>
+            <div><i class="fa-solid fa-phone"></i>+00 100 1900 695</div>
+            <div id="date"><i class="fa-solid fa-clock"></i>
+            <script> 
+            document.write(new Date().toLocaleDateString()); 
+            </script>
+            </div>
+         </div>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form class="contact"  method="post">
+                <input class="text-box" type="text" name="name" placeholder=" Your Name" required/>
+                <input class="text-box" type="email" name="email" placeholder="Your Email" required/>
+                <textarea class="txtarea" name="Message" rows="5px" placeholder="Your Message" required></textarea>
+                <input class="btn-submit" type="submit" name="submit" value="Send">
+            </form> 
+        </div>
+    </div>
+    
+</body>
+</html>

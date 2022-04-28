@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <!--                  meta files          -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="shop, commerce , online shop,clothes ">
+    <meta name="description" content="ecomerce system">
+    <meta name="author" content="Abobakr Mohammed Aboelala">
+    <meta name="viewport " content="width=device-width, initial-scale=1.0 ">
+    <!--               CSS Files               -->
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="Css/style.min.css">
+    <title></title>
+</head>
+
+<body style="background-color: #f1f1f1;">
+
+    <form method="get" action="index.html">
+        <div class="containeer">
+            <legend style="margin: 5px; text-align: center;">
+                <h1>Register </h1>
+            </legend>
+            <hr>
+            <div class="mb ">
+                <label class="label-username">First Name</label>
+                <input type="text" class="form-control " name="username" id="username" placeholder="First Name" required>
+                <small class="error"></small>
+            </div>
+            <div class="mb">
+                <label class="label-username">Last Name</label>
+                <input type="text" class="form-control " name="username" id="username" placeholder="Last Name" required>
+                <small class="error"></small>
+            </div>
+            <div class="mb">
+                <label class="label-phone">phone</label>
+                <input type="text" class="form-control" name="userphone" id="userphone" placeholder="Enter your Phone Number" required>
+                <small class="error"></small>
+            </div>
+            <div class="mb">
+                <label class="label-email">email</label>
+                <input type="email" class="form-control" name="useremail" id="useremail" placeholder="Enter your Email" required>
+                <small class="error"></small>
+            </div>
+            <div class="mb">
+                <label class="label-password">password</label>
+                <input type="password" class="form-control" name="userpassword" id="password" onChange="onChange()" placeholder="Password" required>
+                <span class="match"></span>
+            </div>
+            <div class="mb">
+                <label class="label-password">comfirm password</label>
+                <input type="password" class="form-control" name="userrepassword" id="repassword" onChange="onChange()" placeholder="Repassword" required>
+                <span id="match"></span>
+            </div>
+            <input type="submit" class="submit" onsubmit="validator()" value="Submit" />
+            <div class="mb">
+                <p>Already have an account? <a href="login.html">sign in</a>.</p>
+            </div>
+        </div>
+    </form>
+
+
+
+    <!--               JS Files               -->
+    <script src="javaScript/all.min.js"></script>
+    <script src="javaScript/script.min.js"></script>
+
+</body>
+
+</html>
