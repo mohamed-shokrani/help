@@ -1,4 +1,4 @@
-.card {
+.card1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 22.5%;
     display: inline-block!important;
@@ -10,6 +10,10 @@
     height: 250px;
     text-align: center;
     /* transition: 2s; */
+}
+
+del {
+    text-decoration: line-through;
 }
 
 .overlay {
@@ -26,7 +30,7 @@
     transition: 0.5s;
 }
 
-.card:hover {
+.card1:hover {
     /* width: 22.5%;
     height: 260px; */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -36,7 +40,7 @@
     padding: 2px 16px;
 }
 
-.button {
+.button1 {
     background-color: #6fcc44;
     /* Green */
     border: none;
@@ -51,7 +55,12 @@
     cursor: pointer;
 }
 
-.button2 {
+.button1:focus {
+    border: none !important;
+    outline: none;
+}
+
+.button21 {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -105,38 +114,43 @@ i {
     -ms-word-break: normal;
     word-break: normal;
 }
-h2 ,.fas fa-shopping-cart fa-spin{
-    margin-left: 15px
-}
-#cart-logo,.selectdiv{
 
+h2,
+.fas fa-shopping-cart fa-spin {
     margin-left: 15px
 }
+
+#cart-logo,
+.selectdiv {
+    margin-left: 15px
+}
+
 @media (max-width: 767px) {
     .footer-col {
-      width: 25%;
-      margin-bottom: 20px;
-      font-size: 5px;
+        width: 25%;
+        margin-bottom: 20px;
+        font-size: 5px;
     }
-  }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     .card {
-      width: 25%;
-      margin-bottom: 20px;
-      font-size: 5px;
+        width: 25%;
+        margin-bottom: 20px;
+        font-size: 5px;
     }
-  }
-  @media (max-width: 350px) {
+}
+
+@media (max-width: 350px) {
     .card {
-      width: 15%;
-      margin-bottom: 20px;
-      font-size: 5px;
+        width: 15%;
+        margin-bottom: 20px;
+        font-size: 5px;
     }
-    .button{
+    .button {
         font-size: 1px;
     }
-    .button2{
+    .button2 {
         font-size: 1px;
     }
-  }
+}

@@ -102,29 +102,36 @@ function display_data(data) {
         span22 = document.createElement('span');
         disc.innerHTML = (item.price) + ' $ '
 
-        span22.innerHTML = ' - ' + (item.price - item.discountPercentage) + ' $'
+        span22.innerHTML = ' - ' + (item.price - Math.round(item.discountPercentage)) + ' $'
         btn.innerHTML = 'Add To Cart'
         div.classList.add('container');
-        card.classList.add('card');
+        card.classList.add('card1');
         card.style.cursor = "pointer"
-        btn.classList.add('button')
-        btn.classList.add('button2')
+        btn.classList.add('button1')
+        btn.classList.add('button21')
         btn.onclick = function(event) {
-            event.stopPropagation()
-            addcart(item.id, item.discountPercentage, item.brand, item.title, item.description, item.price, item.thumbnail)
-            alert(item.title + 'added to Shopping Cart')
 
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                addcart(item.id, item.discountPercentage, item.brand, item.title, item.description, item.price, item.thumbnail)
+                alert(item.title + 'added to Shopping Cart')
+            }
         }
         card.onclick = function(event) {
-            event.stopPropagation()
-            document.getElementById("body").style.background = "rgba(88, 86, 91, 0.4)";
-            document.getElementById("myNav").style.width = "50%";
-            document.getElementById("img_overlay").src = item.thumbnail
-            document.getElementById("title_overlay").innerHTML = 'Title :' + item.title
-            document.getElementById("brand_overlay").innerHTML = 'Brand :' + item.brand
-            document.getElementById("discount_overlay").innerHTML = 'Discount : ' + item.discountPercentage
-            document.getElementById("price_overlay").innerHTML = 'Price : ' + item.price
-            document.getElementById("discription_overlay").innerHTML = 'Discription : ' + item.description
+
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                document.getElementById("body").style.background = " rgba(90, 90, 91, 0.9)";
+                document.getElementById("body").style.opacity = 0.8;
+                document.getElementById("myNav").style.width = "50%";
+                document.getElementById("img_overlay").src = item.thumbnail
+                document.getElementById("title_overlay").innerHTML = 'Title :' + item.title
+                document.getElementById("brand_overlay").innerHTML = 'Brand :' + item.brand
+                document.getElementById("discount_overlay").innerHTML = 'Discount : ' + item.discountPercentage
+                document.getElementById("price_overlay").innerHTML = 'Price : ' + item.price
+                document.getElementById("discription_overlay").innerHTML = 'Discription : ' + item.description
+            }
+
         }
         card.appendChild(img)
 
@@ -143,24 +150,26 @@ function display_data(data) {
 
 document.getElementById("body").onclick = function() {
     document.getElementById("body").style.background = "none"
-    document.getElementById("myNav").style.width = "0";
+    document.getElementById("body").style.opacity = 1;
+    document.getElementById("myNav").style.width = 0;
 }
 var count;
 //function for add to cart
 let countEl = document.getElementById("lblCartCount")
 let counter = 0
+
 function addcart(id, discountPercentage, brand, title, description, price, image) {
 
     counter += 1
     countEl.innerHTML = counter
     if (localStorage.getItem(id)) {
-       
+
         cart = JSON.parse(localStorage.getItem(id));
         console.log(cart)
         if (cart) {
             cart.count++;
             localStorage.setItem(id, JSON.stringify(cart));
-            
+
 
         } else {
 
