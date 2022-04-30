@@ -9,3 +9,10 @@ var sw = new Swiper(".mySwiper", {
 });
 
 // end of slide show script 
+$(document).ready(function() {
+  $(".menu-toggle").click(function() {
+      $("search-box").toggleClass("search-box");
+      $(".menu-toggle").toggleClass("active");
+      $("nav").toggleClass("active");
+  });
+});
