@@ -64,21 +64,25 @@
 
 
 
-    <div class="card">
+    <div class="card" >
         <div class="row">
             <div id="cart" class="col-md-8 cart">
+
                 <div class="title">
                     <div class="row">
                         <div class="col">
+
                             <h4><b>Shopping Cart</b></h4>
-                        </div>
+                        </div >
                         <div id="items" class="col align-self-center text-right text-muted"></div>
                     </div>
+
                 </div>
 
 
-            </div>
-            <div class="col-md-4 summary">
+            </div>               
+
+            <div class="col-md-4 summary" style="float: right!important;">
                 <div>
                     <h5><b>TOTAL PRICE</b></h5>
                 </div>
@@ -104,7 +108,7 @@
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                     <div class="col">TOTAL PRICE</div>
                     <div id="total" class="col text-right"></div>
-                </div> <button class="btn" onclick="location.assign('checkout.html')">CHECKOUT</button>
+                </div> <button class="btn" id="checkout" onclick="location.assign('checkout.html')">CHECKOUT</button>
             </div>
         </div>
     </div>
@@ -174,13 +178,13 @@
     <script src="/script/responsiveslider.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $(".menu-toggle").click(function() {
-                $("search-box").toggleClass("search-box");
-                $(".menu-toggle").toggleClass("active");
-                $("nav").toggleClass("active");
-            });
-        });
+        // $(document).ready(function() {
+        //     $(".menu-toggle").click(function() {
+        //         $("search-box").toggleClass("search-box");
+        //         $(".menu-toggle").toggleClass("active");
+        //         $("nav").toggleClass("active");
+        //     });
+        // });
     </script>
     <script src="script/bootstrap.bundle.js"></script>
     <script src="script/bootstrap.bundle.min.js"></script>

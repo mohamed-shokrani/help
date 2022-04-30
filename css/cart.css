@@ -194,3 +194,13 @@ footer{
     color: #ffffff;
     transition: all 0.3s ease;
   }
+  #removeall{
+      background-color: rgb(120, 8, 8);
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 10px;
+  }
+  #removeall:hover{
+      background-color: #000;
+      
+  }

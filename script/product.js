@@ -64,9 +64,11 @@ function select_category() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 var display = JSON.parse(xhttp.responseText);
                 display_data(display.products);
+                show_me(display.products)
 
             }
         }
+          var showChange = document.getElementById("change").value
         //if select All Categories from dropdown
     if (document.getElementById('select').value == 'All Categories') {
         const xhttp3 = new XMLHttpRequest();
@@ -77,15 +79,43 @@ function select_category() {
             if (xhttp3.readyState == 4 && xhttp3.status == 200) {
                 var display = JSON.parse(xhttp3.responseText);
                 display_data(display.products);
+                // show_me(display.products)
             }
         }
     }
 }
+// function show_me(){
+//     console.log(display.products)
+// }
+// console.log(show_me(data))
+
+// alert("ddddddd")
+
+function chRa(){
+    var showChange = document.getElementById("change").value
+    if(showChange==="less than 500"){
+        // display_data(data)
+        
+        alert("working")
+    }
+}
+
+// console.log(chRa())
 //display categories in screan
 function display_data(data) {
     var img;
     var p1, span22, btn, div, card, disc;
+    
+        var showChange = document.getElementById("change").value
+        // if(item.price<500 && chRa() ==true ){
+        //     // display_data(data)
+            
+        //     alert("working")
+        
+    
     for (let item of data) {
+        if(item.price<500 &&showChange==="less than 500"){
+           
 
         img = document.createElement('img')
 
@@ -131,7 +161,67 @@ function display_data(data) {
                 document.getElementById("price_overlay").innerHTML = 'Price : ' + item.price
                 document.getElementById("discription_overlay").innerHTML = 'Discription : ' + item.description
             }
+        
+        }
+        card.appendChild(img)
 
+        div.appendChild(p1)
+
+        div.appendChild(disc)
+        div.appendChild(span22)
+        div.appendChild(btn)
+        card.appendChild(div)
+        document.getElementById('all').appendChild(card)
+        // location.reload();
+
+    }
+    else if (item.price>500 &&showChange==="More than 500"){
+        
+        img = document.createElement('img')
+
+        p1 = document.createElement('p')
+        p2 = document.createElement('p')
+        btn = document.createElement('button')
+        div = document.createElement('div')
+        card = document.createElement('div')
+        img.src = item.thumbnail;
+        img.style.width = 50 + '%';
+        img.style.height = 40 + '%';
+        p1.innerHTML = item.title;
+        disc = document.createElement('del');
+        span22 = document.createElement('span');
+        disc.innerHTML = (item.price) + ' $ '
+
+        span22.innerHTML = ' - ' + (item.price - Math.round(item.discountPercentage)) + ' $'
+        btn.innerHTML = 'Add To Cart'
+        div.classList.add('container');
+        card.classList.add('card1');
+        card.style.cursor = "pointer"
+        btn.classList.add('button1')
+        btn.classList.add('button21')
+        btn.onclick = function(event) {
+
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                addcart(item.id, item.discountPercentage, item.brand, item.title, item.description, item.price, item.thumbnail)
+                // alert(item.title + 'added to Shopping Cart')
+            }
+        }
+        card.onclick = function(event) {
+
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                document.getElementById("body").style.background = " rgba(90, 90, 91, 0.9)";
+                document.getElementById("body").style.opacity = 0.8;
+                document.getElementById("myNav").style.width = "50%";
+                document.getElementById("img_overlay").src = item.thumbnail
+                document.getElementById("title_overlay").innerHTML = 'Title :' + item.title
+                document.getElementById("brand_overlay").innerHTML = 'Brand :' + item.brand
+                document.getElementById("discount_overlay").innerHTML = 'Discount : ' + item.discountPercentage
+                document.getElementById("price_overlay").innerHTML = 'Price : ' + item.price
+                document.getElementById("discription_overlay").innerHTML = 'Discription : ' + item.description
+            }
+        
         }
         card.appendChild(img)
 
@@ -144,10 +234,70 @@ function display_data(data) {
         document.getElementById('all').appendChild(card)
 
     }
+    else if(item.price>1 && showChange==="Defalut"){
+        img = document.createElement('img')
+
+        p1 = document.createElement('p')
+        p2 = document.createElement('p')
+        btn = document.createElement('button')
+        div = document.createElement('div')
+        card = document.createElement('div')
+        img.src = item.thumbnail;
+        img.style.width = 50 + '%';
+        img.style.height = 40 + '%';
+        p1.innerHTML = item.title;
+        disc = document.createElement('del');
+        span22 = document.createElement('span');
+        disc.innerHTML = (item.price) + ' $ '
+
+        span22.innerHTML = ' - ' + (item.price - Math.round(item.discountPercentage)) + ' $'
+        btn.innerHTML = 'Add To Cart'
+        div.classList.add('container');
+        card.classList.add('card1');
+        card.style.cursor = "pointer"
+        btn.classList.add('button1')
+        btn.classList.add('button21')
+        btn.onclick = function(event) {
+
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                addcart(item.id, item.discountPercentage, item.brand, item.title, item.description, item.price, item.thumbnail)
+                alert(item.title + 'added to Shopping Cart')
+            }
+        }
+        card.onclick = function(event) {
+
+            if (document.getElementById("myNav").style.width != "50%") {
+                event.stopPropagation()
+                document.getElementById("body").style.background = " rgba(90, 90, 91, 0.9)";
+                document.getElementById("body").style.opacity = 0.8;
+                document.getElementById("myNav").style.width = "50%";
+                document.getElementById("img_overlay").src = item.thumbnail
+                document.getElementById("title_overlay").innerHTML = 'Title :' + item.title
+                document.getElementById("brand_overlay").innerHTML = 'Brand :' + item.brand
+                document.getElementById("discount_overlay").innerHTML = 'Discount : ' + item.discountPercentage
+                document.getElementById("price_overlay").innerHTML = 'Price : ' + item.price
+                document.getElementById("discription_overlay").innerHTML = 'Discription : ' + item.description
+            }
+        
+        }
+        card.appendChild(img)
+
+        div.appendChild(p1)
+
+        div.appendChild(disc)
+        div.appendChild(span22)
+        div.appendChild(btn)
+        card.appendChild(div)
+        document.getElementById('all').appendChild(card)
 
 
+    }
+    }
+
+/////// end of if
 }
-
+        
 document.getElementById("body").onclick = function() {
     document.getElementById("body").style.background = "none"
     document.getElementById("body").style.opacity = 1;
